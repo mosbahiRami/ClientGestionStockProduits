@@ -10,6 +10,9 @@ import { ContentComponent } from './content/content.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ProduitService } from './produit/produit.service';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,14 +22,16 @@ import { AppRoutingModule } from './app-routing.module';
     SidebarComponent,
     DashboardComponent,
 
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [ProduitMockService],
+  providers: [ProduitMockService, ProduitService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
